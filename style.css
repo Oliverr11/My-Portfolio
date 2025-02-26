@@ -63,9 +63,31 @@ body {
   padding: 10px;
   width: 100%;
 }
-.header ul li a:hover {
+/* .header ul li a:hover {
   color: #131313;
   background-color: white;
+} */
+.header ul li a:hover {
+  color: orange;
+  transition: all 0.2s ease-in-out;
+}
+.header ul li a::before {
+  content: "";
+  width: 0;
+  height: 3px;
+  background-color: #d4143a;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  bottom: 20px;
+}
+.header ul li a:hover::before {
+  content: "";
+  width: 50px;
+  height: 3px;
+  position: absolute;
+  bottom: 20px;
+  background-color: #d4143a;
+  transition: all 0.2s ease-in-out;
 }
 .container {
   display: flex;
@@ -333,11 +355,11 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 475px) {
+@media (max-width: 475px) {
+  #footer {
+    font-size: 10px;
+  }
 }
-@media (min-width: 640px) {
-}
-
 @media (max-width: 1024px) {
   .overlay {
     position: absolute;
@@ -503,7 +525,10 @@ html {
     font-size: 35px;
     transition: 0.2s;
   }
-
+  .header ul li a:hover {
+    color: rgb(13, 13, 13);
+    background-color: orange;
+  }
   .overlay {
     background-image: url("assets/my_cover2.jpg");
     width: 100%;
